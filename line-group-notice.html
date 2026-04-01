@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>LINE 群組公告 Prompt 產生器</title>
+  <link rel="stylesheet" href="assets/styles.css">
+</head>
+<body>
+  <main class="container">
+    <header class="hero compact">
+      <p class="eyebrow">LINE Notice Tool</p>
+      <h1>LINE 群組公告 Prompt 產生器</h1>
+      <p class="subtitle">一次產出完整版、精簡版、提醒版公告內容。</p>
+      <p class="subtitle linkline"><a href="index.html">回主頁</a></p>
+    </header>
+
+    <section class="panel">
+      <h2>輸入欄位</h2>
+      <form id="line-notice-form" class="form-grid">
+        <label>
+          公告類型（必填）
+          <select id="noticeType" name="noticeType" required>
+            <option value="">請選擇</option>
+            <option value="一般公告">一般公告</option>
+            <option value="緊急通知">緊急通知</option>
+            <option value="任務分工">任務分工</option>
+            <option value="活動前提醒">活動前提醒</option>
+          </select>
+        </label>
+
+        <label>
+          主旨（必填）
+          <input id="subject" name="subject" type="text" placeholder="例：週五美語闖關活動前置分工" required>
+        </label>
+
+        <label>
+          重點事項（必填，每行一點）
+          <textarea id="keyPoints" name="keyPoints" rows="5" placeholder="例：&#10;場地佈置需在 16:30 前完成&#10;單字卡與題卡先分組放好" required></textarea>
+        </label>
+
+        <label>
+          對象（選填）
+          <input id="audience" name="audience" type="text" placeholder="例：全體老師 / 美語老師">
+        </label>
+
+        <label>
+          截止時間（選填）
+          <input id="deadline" name="deadline" type="text" placeholder="例：今天 20:00 前">
+        </label>
+
+        <label>
+          分工（選填，每行一筆：姓名＋任務）
+          <textarea id="assignments" name="assignments" rows="4" placeholder="例：&#10;Amy：場地佈置與動線確認&#10;Ben：教材與題卡檢查"></textarea>
+        </label>
+
+        <label>
+          回覆要求（選填）
+          <input id="replyRule" name="replyRule" type="text" placeholder="例：請於今晚 20:00 前回覆「收到+姓名」">
+        </label>
+
+        <label>
+          備註（選填）
+          <textarea id="extraNotes" name="extraNotes" rows="3" placeholder="例：若臨時無法到位請提前在群組告知"></textarea>
+        </label>
+      </form>
+
+      <div class="button-row">
+        <button id="runFlowBtn" type="button" class="btn primary">複製 Prompt 並開啟 ChatGPT</button>
+        <button id="copyBtn" type="button" class="btn">只複製 Prompt</button>
+        <button id="clearSavedBtn" type="button" class="btn ghost">清除上次資料</button>
+      </div>
+
+      <p id="status" class="status">尚未操作</p>
+      <p id="savedInfo" class="saved-info"></p>
+    </section>
+
+    <section class="panel">
+      <h2>Prompt 預覽</h2>
+      <textarea id="promptPreview" class="preview" rows="18" readonly></textarea>
+    </section>
+  </main>
+
+  <script src="assets/line-group-notice.js"></script>
+</body>
+</html>
