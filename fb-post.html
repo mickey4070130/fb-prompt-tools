@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>FB 貼文 Prompt 產生器</title>
+  <link rel="stylesheet" href="assets/styles.css">
+</head>
+<body>
+  <main class="container">
+    <header class="hero compact">
+      <p class="eyebrow">FB Post Tool</p>
+      <h1>FB 貼文 Prompt 產生器</h1>
+      <p class="subtitle">固定一次產出三種風格（專業 / 溫馨 / 痛點）。</p>
+      <p class="subtitle linkline"><a href="index.html">回主頁</a></p>
+    </header>
+
+    <section class="panel">
+      <h2>輸入欄位</h2>
+      <form id="fb-post-form" class="form-grid">
+        <label>
+          活動名稱
+          <input id="activityName" name="activityName" type="text" placeholder="例：美語拼字挑戰" required>
+        </label>
+
+        <label>
+          年級
+          <input id="grade" name="grade" type="text" placeholder="例：中年級班" required>
+        </label>
+
+        <label>
+          亮點（每行一點）
+          <textarea id="highlights" name="highlights" rows="4" placeholder="例：分組闖關&#10;句型配對&#10;角色對話" required></textarea>
+        </label>
+
+        <label>
+          孩子表現（每行一點）
+          <textarea id="childPerformance" name="childPerformance" rows="4" placeholder="例：主動舉手回答&#10;願意完整說句子" required></textarea>
+        </label>
+
+        <label>
+          其他（選填）
+          <textarea id="otherNotes" name="otherNotes" rows="3" placeholder="例：照片以分組討論與上台口說為主"></textarea>
+        </label>
+      </form>
+
+      <div class="button-row">
+        <button id="runFlowBtn" type="button" class="btn primary">複製 Prompt 並開啟 ChatGPT</button>
+        <button id="copyBtn" type="button" class="btn">只複製 Prompt</button>
+        <button id="clearSavedBtn" type="button" class="btn ghost">清除上次資料</button>
+      </div>
+
+      <p id="status" class="status">尚未操作</p>
+      <p id="savedInfo" class="saved-info"></p>
+    </section>
+
+    <section class="panel">
+      <h2>Prompt 預覽</h2>
+      <textarea id="promptPreview" class="preview" rows="16" readonly></textarea>
+    </section>
+  </main>
+
+  <script src="assets/fb-post.js"></script>
+</body>
+</html>

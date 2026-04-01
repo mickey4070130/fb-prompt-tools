@@ -1,0 +1,20 @@
+{
+  "generate_styles": ["professional", "pain_point", "warm"],
+  "shared_input": {
+    "activity_name": "美語闖關日",
+    "course_type": "美語課",
+    "date_label": "本週三",
+    "class_group": "中年級班",
+    "activity_highlights": ["分組闖關", "句型配對", "角色對話"],
+    "child_observations": ["主動舉手回答", "願意完整說句子", "同組互相提醒發音"],
+    "teaching_goal": "提升口說勇氣與句型熟悉度",
+    "parent_message": "回家可用今天的 3 個句型做 5 分鐘口說練習。",
+    "cta": "想了解課程安排，歡迎私訊我們。",
+    "hashtags": ["#安親班", "#美語課", "#英文口說", "#學習日常"]
+  },
+  "style_overrides": {
+    "pain_point": {
+      "pain_point_topic": "孩子背了單字卻不敢開口說英文"
+    }
+  }
+}
